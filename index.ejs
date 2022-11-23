@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code assesment</title>
+</head>
+<body>
+    <h1>Fetch Rewards code assessment</h1>
+    <!-- Enter new transaction form-->
+    <div>
+        <form action="/" method="post" >
+            <h2>Enter transaction</h2>
+            <label for="payer">Payer:</label>
+            <input type="text" id="payer" name="payer" placeholder="------" required>
+            <label for="points">Points:</label>
+            <input type="number" id="points" name="points" placeholder="------" required>
+            <input type="datetime-local" id="timestamp" name="timestamp">
+            <input type="submit">
+        </form>
+    </div>
+    <!-- Spend points form-->
+    <div>
+        <form>
+            <h2>Spend points</h2>
+            <input type="number" placeholder="points" required>
+            <input type="submit">
+        </form>
+    </div>
+    <br/>
+    <!-- View balances button-->
+    <div>
+        <form action="/balances" method="get">
+            <input type="submit" id="view-balances" value="View balances">
+        </form>
+    </div>
+    <!-- Print area for recent transaction-->
+    <div id="log">
+    <% if (transaction) { %>
+        <ul>
+            <li id="payer"">Payer: <%= transaction.payer %></li>
+            <li id="points"">Points: <%= transaction.points %></li>
+            <li id="timestamp"">Timestamp: <%= transaction.timestamp %></li>
+        </ul>
+    <% } %>
+    </div>
+</body>
+</html>
