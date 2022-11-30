@@ -11,7 +11,7 @@
     <!-- Enter new transaction form-->
     <div>
         <form action="/" method="post" >
-            <h2>Enter transaction</h2>
+            <h3>Enter transaction</h3>
             <label for="payer">Payer:</label>
             <input type="text" id="payer" name="payer" placeholder="------" required>
             <label for="points">Points:</label>
@@ -20,14 +20,17 @@
             <input type="submit">
         </form>
     </div>
+    <br/>
     <!-- Spend points form-->
     <div>
-        <form>
-            <h2>Spend points</h2>
-            <input type="number" placeholder="points" required>
+        <form action="/spend" method="post">
+            <h3>Spend points</h3>
+            <label for="spentPoints">Points:</label>
+            <input type="number" placeholder="------" name="spentPoints" id="spentPoints" required>
             <input type="submit">
         </form>
     </div>
+    <br/>
     <br/>
     <!-- View balances button-->
     <div>
